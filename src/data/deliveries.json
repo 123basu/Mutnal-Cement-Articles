@@ -1,6 +1,21 @@
 {
   "deliveries": [
     {
+      "id": "d-1784534769178",
+      "customerName": "Mohan",
+      "projectType": "Infrastructure",
+      "products": [
+        "bug sized block"
+      ],
+      "quantity": 300,
+      "deliveryDate": "2024-09-10",
+      "purpose": "shed building ",
+      "isGovernment": false,
+      "lat": 15.779468,
+      "lng": 74.649836,
+      "city": "Bagewadi"
+    },
+    {
       "id": "d-001",
       "customerName": "Villlage corporation",
       "projectType": "Infrastructure",
