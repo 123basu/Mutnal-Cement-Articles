@@ -1,0 +1,91 @@
+{
+  "Nav": {
+    "home": "Home",
+    "about": "About Us",
+    "products": "Products",
+    "contact": "Contact",
+    "blog": "Blog",
+    "deliveries": "Deliveries",
+    "language": "Language"
+  },
+  "Home": {
+    "heroTitle": "Strong Foundations, Quality Cement Bricks",
+    "heroSubtitle": "We manufacture durable solid, hollow, paving and interlocking cement bricks for homes, commercial buildings and infrastructure across Karnataka.",
+    "ctaQuote": "Get a Quote",
+    "ctaDeliveries": "View Delivery Map",
+    "uspTitle": "Why Choose Us",
+    "usp1Title": "Premium Quality",
+    "usp1Text": "IS-standard raw materials and rigorous quality checks on every batch.",
+    "usp2Title": "Pan-Karnataka Delivery",
+    "usp2Text": "Timely delivery to sites across the state, tracked and transparent.",
+    "usp3Title": "Eco Friendly",
+    "usp3Text": "Fly-ash based bricks that reduce carbon footprint.",
+    "usp4Title": "Competitive Pricing",
+    "usp4Text": "Direct-from-factory rates with no middlemen.",
+    "featuredProducts": "Featured Products",
+    "viewAllProducts": "View All Products",
+    "deliveriesTitle": "Our Delivery Footprint",
+    "deliveriesText": "Explore completed deliveries across the region, including government infrastructure projects.",
+    "ctaBandTitle": "Ready to start your project?",
+    "ctaBandText": "Get in touch for a quote on cement bricks for your next build."
+  },
+  "About": {
+    "title": "About Us",
+    "intro": "Built on a commitment to quality and service, we are a leading cement brick manufacturer serving builders, contractors and government projects.",
+    "missionTitle": "Our Mission",
+    "missionText": "To deliver consistent, high-quality building materials that help our customers build safely and affordably.",
+    "statsYears": "Years of Experience",
+    "statsTonnes": "Tonnes Produced / Year",
+    "statsCities": "Cities Served",
+    "statsGov": "Government Projects",
+    "valuesTitle": "Our Values",
+    "value1Title": "Quality",
+    "value1Text": "Every brick meets structural and durability standards.",
+    "value2Title": "Reliability",
+    "value2Text": "On-time delivery, every time.",
+    "value3Title": "Sustainability",
+    "value3Text": "Responsible sourcing and lower-emission production."
+  },
+  "Products": {
+    "title": "Our Products",
+    "intro": "A complete range of cement bricks for every construction need.",
+    "solidSize1Title": "Solid Brick 9x4x3",
+    "solidSize1Text": "Load-bearing solid bricks for walls and foundations. Size 9x4x3 inch.",
+    "solidSize2Title": "Solid Brick 8x4x3",
+    "solidSize2Text": "Load-bearing solid bricks for walls and foundations. Size 8x4x3 inch.",
+    "specsLabel": "Key Specs"
+  },
+  "Contact": {
+    "title": "Contact Us",
+    "intro": "Reach out for quotes, bulk orders or partnership opportunities.",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "send": "Send Message",
+    "success": "Thanks! We will get back to you shortly.",
+    "addressTitle": "Factory & Office",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email"
+  },
+  "Deliveries": {
+    "title": "Delivery History Map",
+    "intro": "Every completed delivery is shown on the map. Hover or tap a marker for details.",
+    "legendRegular": "Regular Delivery",
+    "legendGov": "Government Project",
+    "loading": "Loading map…",
+    "customer": "Customer",
+    "projectType": "Project Type",
+    "products": "Products",
+    "quantity": "Quantity",
+    "date": "Delivery Date",
+    "purpose": "Purpose",
+    "govBadge": "Government Project"
+  },
+  "Footer": {
+    "tagline": "Quality cement bricks for a stronger tomorrow.",
+    "quickLinks": "Quick Links",
+    "contactTitle": "Contact",
+    "rights": "All rights reserved."
+  }
+}

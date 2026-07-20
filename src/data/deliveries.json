@@ -1,0 +1,56 @@
+{
+  "deliveries": [
+    {
+      "id": "d-001",
+      "customerName": "Villlage corporation",
+      "projectType": "Infrastructure",
+      "products": ["Solid Brick 9x4x3"],
+      "quantity": 12000,
+      "deliveryDate": "2022-03-12",
+      "purpose": "Pump House Construction",
+      "isGovernment": true,
+      "lat": 15.706180, 
+      "lng": 74.703562,
+      "city": "M K Hubli"
+    },
+    {
+      "id": "d-002",
+      "customerName": "RCU university building",
+      "projectType": "Infrastructure",
+      "products": ["Solid Brick 9x4x3"],
+      "quantity": 45000,
+      "deliveryDate": "2024-04-02",
+      "purpose": "Government College building",
+      "isGovernment": true,
+      "lat": 16.005133, 
+      "lng": 74.504846,
+      "city": "Belagavi"
+    },
+    {
+      "id": "d-005",
+      "customerName": "Ananya Builders",
+      "projectType": "Residential",
+      "products": ["Interlocking Brick"],
+      "quantity": 9500,
+      "deliveryDate": "2026-05-18",
+      "purpose": "Compound wall",
+      "isGovernment": false,
+      "lat": 15.716717, 
+      "lng": 74.694971,
+      "city": "M K Hublu"
+    },
+    {
+      "id": "d-006",
+      "customerName": "Coastal Works Department",
+      "projectType": "Infrastructure",
+      "products": ["Paving Block", "Solid Brick 9x4x3"],
+      "quantity": 38000,
+      "deliveryDate": "2026-06-01",
+      "purpose": "Government coastal promenade",
+      "isGovernment": false,
+      "lat": 13.004,
+      "lng": 74.7937,
+      "city": "Mangaluru"
+    }
+  ]
+}

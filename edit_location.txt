@@ -1,0 +1,17 @@
+2. Products — keep only "Solid Brick", add sizes/description/image/specs
+Two places, both must be edited:
+- Home page teaser — src/app/[locale]/page.tsx lines 84-95: the .map over ["Solid Brick", "Hollow Brick", "Paving Block", "Interlocking Brick"]. Replace that array with your Solid Brick size variants.
+- Dedicated products page — src/app/[locale]/products/page.tsx:
+- The PRODUCTS array (lines 5-34) defines each product. Delete the hollow, paving, interlock entries, keep only solid, and add new entries for each size variant (title, text, image, specs).
+- The card UI (lines 50-79) renders titleKey, textKey, and specs. To add an image, you'll add an image field to each product object and render it (e.g. <img> above the colored div on line 56).
+- The text strings (solidTitle, solidText) live in src/messages/en.json (Products block, lines 49-61) — add matching keys for new variants. Also mirror in hi.json / kn.json if you support those languages.
+
+3. Delivery map — remove/add pins + hover info
+- src/data/deliveries.json — the full list of pins (each object = one marker: lat, lng, customerName, products, quantity, deliveryDate, purpose, city, isGovernment). Delete objects to remove pins; add objects to add pins. This drives both the map and the hover popup.
+- Hover popup layout/fields: src/components/DeliveryPopup.tsx (the Row items shown on hover).
+- Map config (center/zoom/colors): src/components/DeliveryMap.tsx.
+
+src/app/[locale]/contact/page.tsx lines 77-90: the address, phone (+91 90000 00000), and email (factory@bharathbricks.example) are hardcoded here — edit them directly.
+it is optional - (If you'd rather move them into translation files, the labels live in src/messages/en.json Contact block (lines 62-74: addressTitle, phoneLabel, emailLabel), but the actual values are hardcoded in the page, not the JSON.)
+
+To change the footer contact info later, edit those <li> lines in src/components/Footer.tsx (currently lines 46-48). The map pins (#3 from before) you said you'd handle manually in src/data/deliveries.json.
