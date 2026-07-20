@@ -53,7 +53,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-stone-800 py-4 text-center text-xs text-stone-500">
-        © {new Date().getFullYear()} Bharath Cement Bricks. {t("rights")}
+        © {new Date().getFullYear()} Mutnal Cemenmt Articles. {t("rights")}
       </div>
     </footer>
   );

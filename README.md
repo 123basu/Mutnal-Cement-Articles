@@ -1,4 +1,4 @@
-# Bharath Cement Bricks — Website
+# Mutnal Cement Articles — Website
 
 Corporate website for a cement brick manufacturer. Built with **Next.js 16 (App Router)**, **TypeScript**, **Tailwind CSS v4**, **next-intl** (i18n), **Leaflet** (delivery map), and **MDX** (blog). No database — content lives in the repo (MDX posts + `data/deliveries.json`).
 
