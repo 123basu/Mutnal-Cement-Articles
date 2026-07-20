@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { verifySessionToken, SESSION_COOKIE } from "@/lib/session";
-import { readDeliveries, writeDeliveries } from "@/lib/github";
+import { readDeliveries, writeDeliveries, type DeliveriesFile } from "@/lib/github";
 import type { Delivery } from "@/lib/types";
 
 async function isAuthed() {
@@ -15,7 +15,11 @@ export async function GET() {
   }
   try {
     const data = await readDeliveries();
-    return NextResponse.json({ ok: true, deliveries: data.deliveries });
+    return NextResponse.json({
+      ok: true,
+      deliveries: data.deliveries,
+      sha: (data as DeliveriesFile & { sha: string }).sha,
+    });
   } catch (e) {
     return NextResponse.json(
       { ok: false, error: (e as Error).message },

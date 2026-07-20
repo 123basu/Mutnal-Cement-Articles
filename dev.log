@@ -4,14 +4,9 @@
 
 ▲ Next.js 16.2.10 (Turbopack)
 - Local:         http://localhost:3000
-- Network:       http://192.168.1.15:3000
-✓ Ready in 1926ms
+- Network:       http://192.168.137.1:3000
+- Environments: .env.local
+✓ Ready in 1378ms
 
-○ Compiling /[locale]/blog ...
- GET /en/blog 200 in 9.0s (next.js: 7.7s, proxy.ts: 442ms, generate-params: 1822ms, application-code: 887ms)
- GET /en/blog/why-flyash-bricks 200 in 6.3s (next.js: 4.4s, proxy.ts: 20ms, generate-params: 3.3s, application-code: 1840ms)
- GET /en/admin/login 200 in 3.0s (next.js: 2.8s, proxy.ts: 16ms, generate-params: 1687ms, application-code: 197ms)
- GET /en/admin 307 in 3.4s (next.js: 3.1s, proxy.ts: 9ms, generate-params: 1921ms, application-code: 358ms)
- GET /api/admin/deliveries 401 in 807ms (next.js: 757ms, application-code: 49ms)
- GET /sitemap.xml 200 in 643ms (next.js: 606ms, application-code: 37ms)
- GET /robots.txt 200 in 295ms (next.js: 274ms, application-code: 21ms)
+ POST /api/admin/login 200 in 330ms (next.js: 289ms, application-code: 42ms)
+ GET /api/admin/deliveries 502 in 760ms (next.js: 424ms, application-code: 336ms)
