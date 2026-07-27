@@ -1,10 +1,8 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { verifySessionToken, SESSION_COOKIE } from "@/lib/session";
-import fs from "node:fs/promises";
+import { uploadImage } from "@/lib/github";
 import path from "node:path";
-
-const UPLOAD_DIR = path.join(process.cwd(), "public/images/products");
 
 async function isAuthed() {
   const store = await cookies();
@@ -26,10 +24,8 @@ export async function POST(request: Request) {
     const filename = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}${ext}`;
     const buffer = Buffer.from(await file.arrayBuffer());
 
-    await fs.mkdir(UPLOAD_DIR, { recursive: true });
-    await fs.writeFile(path.join(UPLOAD_DIR, filename), buffer);
-
-    return NextResponse.json({ ok: true, url: `/images/products/${filename}` });
+    const url = await uploadImage(filename, buffer);
+    return NextResponse.json({ ok: true, url });
   } catch (e) {
     return NextResponse.json(
       { ok: false, error: (e as Error).message },

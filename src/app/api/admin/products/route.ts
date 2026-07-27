@@ -1,10 +1,8 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { verifySessionToken, SESSION_COOKIE } from "@/lib/session";
-import { readProducts, writeProducts } from "@/lib/github";
+import { readProducts, writeProducts, deleteImage } from "@/lib/github";
 import type { AdminProduct } from "@/lib/types";
-
-const isDev = process.env.NODE_ENV === "development";
 
 async function isAuthed() {
   const store = await cookies();
@@ -40,6 +38,16 @@ export async function POST(request: Request) {
     );
   }
   try {
+    const old = await readProducts();
+    const oldImages = new Set(old.products.map((p) => p.image).filter(Boolean));
+    const newImages = new Set(body.products.map((p) => p.image).filter(Boolean));
+
+    for (const img of oldImages) {
+      if (!newImages.has(img)) {
+        await deleteImage(img).catch(() => {});
+      }
+    }
+
     await writeProducts(body.products);
     return NextResponse.json({ ok: true });
   } catch (e) {
