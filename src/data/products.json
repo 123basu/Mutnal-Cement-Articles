@@ -1,16 +1,6 @@
 {
   "products": [
     {
-      "name": "Mohan",
-      "description": "Lalamohan",
-      "specs": [
-        "Mohan",
-        "lala"
-      ],
-      "image": "/images/products/1785178077057-049e2r.jpg",
-      "id": "p-1785178027719"
-    },
-    {
       "name": "Solid Brick -8x4x3",
       "description": "Load-bearing solid bricks for walls and foundations. Size 8x4x3 inch.",
       "specs": [
