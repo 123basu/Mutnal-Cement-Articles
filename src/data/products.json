@@ -1,13 +1,14 @@
 {
   "products": [
     {
-      "name": "lala",
-      "description": "lala",
+      "name": "Mohan",
+      "description": "Lalamohan",
       "specs": [
+        "Mohan",
         "lala"
       ],
-      "image": "/images/products/1785177921148-fnz136.png",
-      "id": "p-1785177907173"
+      "image": "/images/products/1785178077057-049e2r.jpg",
+      "id": "p-1785178027719"
     },
     {
       "name": "Solid Brick -8x4x3",
