@@ -1,6 +1,21 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { setRequestLocale } from "next-intl/server";
+import fs from "node:fs";
+import path from "node:path";
+import type { AdminProduct } from "@/lib/types";
+
+function getFeaturedProducts(): AdminProduct[] {
+  const filePath = path.join(process.cwd(), "src/data/products.json");
+  if (!fs.existsSync(filePath)) return [];
+  try {
+    const raw = fs.readFileSync(filePath, "utf-8");
+    const data = JSON.parse(raw) as { products: AdminProduct[] };
+    return data.products || [];
+  } catch {
+    return [];
+  }
+}
 
 export default async function HomePage({
   params,
@@ -10,6 +25,8 @@ export default async function HomePage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await import("next-intl/server").then((m) => m.getTranslations("Home"));
+
+  const featuredProducts = getFeaturedProducts();
 
   const usps = [
     { title: t("usp1Title"), text: t("usp1Text") },
@@ -82,19 +99,22 @@ export default async function HomePage({
             </Link>
           </div>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              { name: "Solid Brick 9x4x3", image: "/block_size_1.webp" },
-              { name: "Solid Brick 8x4x3", image: "/block_size_2.webp" },
-            ].map((p) => (
+            {featuredProducts.map((p) => (
               <div
-                key={p.name}
+                key={p.id}
                 className="overflow-hidden rounded-2xl bg-white text-center shadow-sm"
               >
-                <img
-                  src={p.image}
-                  alt={p.name}
-                  className="h-40 w-full object-cover"
-                />
+                {p.image ? (
+                  <img
+                    src={p.image}
+                    alt={p.name}
+                    className="h-40 w-full object-cover"
+                  />
+                ) : (
+                  <div className="flex h-40 items-center justify-center bg-stone-200 text-sm text-stone-400">
+                    No image
+                  </div>
+                )}
                 <div className="p-4 text-lg font-semibold text-stone-700">
                   {p.name}
                 </div>

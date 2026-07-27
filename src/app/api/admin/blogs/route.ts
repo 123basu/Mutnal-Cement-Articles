@@ -1,14 +1,8 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { verifySessionToken, SESSION_COOKIE } from "@/lib/session";
-import {
-  readDeliveries,
-  readDeliveriesLocal,
-  writeDeliveries,
-  writeDeliveriesLocal,
-  type DeliveriesFile,
-} from "@/lib/github";
-import type { Delivery } from "@/lib/types";
+import { readBlogs, writeBlogs } from "@/lib/github";
+import type { AdminBlog } from "@/lib/types";
 
 const isDev = process.env.NODE_ENV === "development";
 
@@ -22,12 +16,8 @@ export async function GET() {
     return NextResponse.json({ ok: false, error: "Unauthorized" }, { status: 401 });
   }
   try {
-    const data = isDev ? await readDeliveriesLocal() : await readDeliveries();
-    return NextResponse.json({
-      ok: true,
-      deliveries: data.deliveries,
-      sha: (data as DeliveriesFile & { sha: string }).sha,
-    });
+    const data = await readBlogs();
+    return NextResponse.json({ ok: true, blogs: data.blogs });
   } catch (e) {
     return NextResponse.json(
       { ok: false, error: (e as Error).message },
@@ -41,27 +31,16 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, error: "Unauthorized" }, { status: 401 });
   }
   const body = (await request.json().catch(() => ({}))) as {
-    deliveries?: Delivery[];
-    sha?: string;
+    blogs?: AdminBlog[];
   };
-  if (!Array.isArray(body.deliveries)) {
+  if (!Array.isArray(body.blogs)) {
     return NextResponse.json(
-      { ok: false, error: "deliveries[] is required" },
+      { ok: false, error: "blogs[] is required" },
       { status: 400 }
     );
   }
   try {
-    if (isDev) {
-      await writeDeliveriesLocal(body.deliveries);
-    } else {
-      if (!body.sha) {
-        return NextResponse.json(
-          { ok: false, error: "sha is required" },
-          { status: 400 }
-        );
-      }
-      await writeDeliveries(body.deliveries, body.sha);
-    }
+    await writeBlogs(body.blogs);
     return NextResponse.json({ ok: true });
   } catch (e) {
     return NextResponse.json(

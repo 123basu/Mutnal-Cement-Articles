@@ -1,3 +1,32 @@
+export interface ContactMessage {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+  submittedAt: string;
+}
+
+export interface AdminProduct {
+  id: string;
+  name: string;
+  description: string;
+  specs: string[];
+  image: string;
+}
+
+export interface AdminBlog {
+  id: string;
+  slug: string;
+  category: string;
+  title: string;
+  description: string;
+  author: string;
+  date: string;
+  readingTime: number;
+  content: string;
+}
+
 export interface Delivery {
   id: string;
   customerName: string;

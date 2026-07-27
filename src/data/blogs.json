@@ -1,0 +1,26 @@
+{
+  "blogs": [
+    {
+      "category": "Sustainability · Products",
+      "title": "Why Fly-Ash Cement Bricks Are Better for the Environment",
+      "description": "",
+      "author": "Marketing Team",
+      "date": "2026-07-27",
+      "readingTime": 0,
+      "id": "b-1785173197140",
+      "slug": "why-fly-ash-cement-bricks-are-better-for-the-environment",
+      "content": "Traditional clay bricks are fired in kilns at high temperatures, consuming large amounts of coal and topsoil. Fly-ash cement bricks take a different path.  What is fly-ash? Fly-ash is a fine byproduct of coal-based power generation. Instead of sending it to landfills, we blend it with cement and aggregates to form durable, dimensionally consistent bricks.  Key benefits Lower carbon footprint per brick Higher strength and uniform size Better thermal insulation for buildings Reduced wastage on site Switching to fly-ash bricks is one of the simplest ways a builder can lower a project's environmental impact.  Learn more on our products page."
+    },
+    {
+      "category": "Guides · Products",
+      "title": "Choosing the Right Brick for Your Project",
+      "description": "Picking the wrong brick can slow your build and raise costs. Here is a simple breakdown.  Solid bricks Use for load-bearing walls and foundations where strength matters most.  Hollow bricks Lighter and better insulated — ideal for fast, energy-efficient construction.  Paving & interlocking Best for driveways, compounds and pathways where a clean, durable surface is needed.  Need help? Contact us and our team will recommend the right mix for your site.",
+      "author": "Technical Team",
+      "date": "2026-07-27",
+      "readingTime": 0,
+      "id": "b-1785173127654",
+      "slug": "choosing-the-right-brick-for-your-project",
+      "content": "Picking the wrong brick can slow your build and raise costs. Here is a simple breakdown.  Solid bricks Use for load-bearing walls and foundations where strength matters most.  Hollow bricks Lighter and better insulated — ideal for fast, energy-efficient construction.  Paving & interlocking Best for driveways, compounds and pathways where a clean, durable surface is needed.  Need help? Contact us and our team will recommend the right mix for your site."
+    }
+  ]
+}

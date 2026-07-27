@@ -67,7 +67,8 @@
     "success": "धन्यवाद! हम जल्द ही आपसे संपर्क करेंगे।",
     "addressTitle": "कारखाना और कार्यालय",
     "phoneLabel": "फ़ोन",
-    "emailLabel": "ईमेल"
+    "emailLabel": "ईमेल",
+    "locateUs": "हमें ढूंढें"
   },
   "Deliveries": {
     "title": "डिलीवरी इतिहास मानचित्र",

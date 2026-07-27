@@ -66,7 +66,8 @@
     "success": "Thanks! We will get back to you shortly.",
     "addressTitle": "Factory & Office",
     "phoneLabel": "Phone",
-    "emailLabel": "Email"
+    "emailLabel": "Email",
+    "locateUs": "Locate Us"
   },
   "Deliveries": {
     "title": "Delivery History Map",

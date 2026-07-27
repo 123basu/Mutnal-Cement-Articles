@@ -1,11 +1,13 @@
 import { cookies } from "next/headers";
 import { redirect } from "@/i18n/navigation";
 import { verifySessionToken, SESSION_COOKIE } from "@/lib/session";
-import { DeliveryForm } from "@/components/admin/DeliveryForm";
+import { AdminNav } from "@/components/admin/AdminNav";
 
-export default async function AdminPage({
+export default async function ProtectedAdminLayout({
+  children,
   params,
 }: {
+  children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
@@ -17,13 +19,13 @@ export default async function AdminPage({
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12">
-      <h1 className="text-3xl font-bold text-stone-900">Manage Deliveries</h1>
-      <p className="mt-2 text-stone-600">
-        Edits are saved to the repository and trigger a redeploy.
-      </p>
-      <div className="mt-8">
-        <DeliveryForm />
+      <div className="mb-8 flex items-center justify-between">
+        <h1 className="text-3xl font-bold text-stone-900">Admin Panel</h1>
       </div>
+
+      <AdminNav />
+
+      {children}
     </div>
   );
 }

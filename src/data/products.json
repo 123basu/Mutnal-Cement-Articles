@@ -1,0 +1,26 @@
+{
+  "products": [
+    {
+      "name": "Solid Brick -8x4x3",
+      "description": "Load-bearing solid bricks for walls and foundations. Size 8x4x3 inch.",
+      "specs": [
+        "8x4x3",
+        "Load bearing",
+        "IS 1077"
+      ],
+      "image": "/images/products/1785173087131-v8iwkq.webp",
+      "id": "p-1785173037692"
+    },
+    {
+      "name": "Solid Brick -9x4x3",
+      "description": "Load-bearing solid bricks for walls and foundations. Size 9x4x3 inch.",
+      "specs": [
+        "9x4x3",
+        "Load bearing",
+        "IS 1077"
+      ],
+      "image": "/images/products/1785173031768-e3brx6.webp",
+      "id": "p-1785172960779"
+    }
+  ]
+}

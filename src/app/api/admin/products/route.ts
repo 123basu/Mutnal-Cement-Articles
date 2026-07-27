@@ -1,14 +1,8 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { verifySessionToken, SESSION_COOKIE } from "@/lib/session";
-import {
-  readDeliveries,
-  readDeliveriesLocal,
-  writeDeliveries,
-  writeDeliveriesLocal,
-  type DeliveriesFile,
-} from "@/lib/github";
-import type { Delivery } from "@/lib/types";
+import { readProducts, writeProducts } from "@/lib/github";
+import type { AdminProduct } from "@/lib/types";
 
 const isDev = process.env.NODE_ENV === "development";
 
@@ -22,12 +16,8 @@ export async function GET() {
     return NextResponse.json({ ok: false, error: "Unauthorized" }, { status: 401 });
   }
   try {
-    const data = isDev ? await readDeliveriesLocal() : await readDeliveries();
-    return NextResponse.json({
-      ok: true,
-      deliveries: data.deliveries,
-      sha: (data as DeliveriesFile & { sha: string }).sha,
-    });
+    const data = await readProducts();
+    return NextResponse.json({ ok: true, products: data.products });
   } catch (e) {
     return NextResponse.json(
       { ok: false, error: (e as Error).message },
@@ -41,27 +31,16 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, error: "Unauthorized" }, { status: 401 });
   }
   const body = (await request.json().catch(() => ({}))) as {
-    deliveries?: Delivery[];
-    sha?: string;
+    products?: AdminProduct[];
   };
-  if (!Array.isArray(body.deliveries)) {
+  if (!Array.isArray(body.products)) {
     return NextResponse.json(
-      { ok: false, error: "deliveries[] is required" },
+      { ok: false, error: "products[] is required" },
       { status: 400 }
     );
   }
   try {
-    if (isDev) {
-      await writeDeliveriesLocal(body.deliveries);
-    } else {
-      if (!body.sha) {
-        return NextResponse.json(
-          { ok: false, error: "sha is required" },
-          { status: 400 }
-        );
-      }
-      await writeDeliveries(body.deliveries, body.sha);
-    }
+    await writeProducts(body.products);
     return NextResponse.json({ ok: true });
   } catch (e) {
     return NextResponse.json(

@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import readingTime from "reading-time";
-import type { BlogFrontmatter, BlogPost } from "@/lib/types";
+import type { BlogFrontmatter, BlogPost, AdminBlog } from "@/lib/types";
 
 const BLOG_DIR = path.join(process.cwd(), "src/content/blog");
 
@@ -36,4 +36,28 @@ export function getAllBlogPosts(): BlogPost[] {
     .map((s) => getBlogPost(s))
     .filter((p): p is BlogPost => p !== null)
     .sort((a, b) => (a.frontmatter.date < b.frontmatter.date ? 1 : -1));
+}
+
+function getAdminBlogsRaw(): AdminBlog[] {
+  const filePath = path.join(process.cwd(), "src/data/blogs.json");
+  if (!fs.existsSync(filePath)) return [];
+  try {
+    const raw = fs.readFileSync(filePath, "utf-8");
+    const data = JSON.parse(raw) as { blogs: AdminBlog[] };
+    return data.blogs || [];
+  } catch {
+    return [];
+  }
+}
+
+export function getAdminBlogSlugs(): string[] {
+  return getAdminBlogsRaw().map((b) => b.slug).filter(Boolean);
+}
+
+export function getAdminBlogs(): AdminBlog[] {
+  return getAdminBlogsRaw().sort((a, b) => (a.date < b.date ? 1 : -1));
+}
+
+export function getAdminBlogBySlug(slug: string): AdminBlog | null {
+  return getAdminBlogsRaw().find((b) => b.slug === slug) || null;
 }

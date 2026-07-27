@@ -1,6 +1,21 @@
 {
   "deliveries": [
     {
+      "id": "d-1785166049653",
+      "customerName": "basu",
+      "projectType": "construction",
+      "products": [
+        "itagi"
+      ],
+      "quantity": 100,
+      "deliveryDate": "2026-07-08",
+      "purpose": "construction",
+      "isGovernment": false,
+      "lat": 18.890118,
+      "lng": 75.276102,
+      "city": "lalamohab"
+    },
+    {
       "id": "d-1784534769178",
       "customerName": "Mohan",
       "projectType": "Infrastructure",

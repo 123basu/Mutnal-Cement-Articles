@@ -1,8 +1,8 @@
 import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
-import { getAllBlogPosts } from "@/lib/blog";
-import { PostCard } from "@/components/blog/PostCard";
+import { getAdminBlogs } from "@/lib/blog";
+import { AdminBlogCard } from "@/components/blog/AdminBlogCard";
 
 export default async function BlogIndex({
   params,
@@ -13,7 +13,7 @@ export default async function BlogIndex({
   setRequestLocale(locale);
   const nav = await getTranslations("Nav");
 
-  const posts = getAllBlogPosts();
+  const posts = getAdminBlogs();
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-16">
@@ -27,7 +27,7 @@ export default async function BlogIndex({
       ) : (
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((p) => (
-            <PostCard key={p.slug} post={p} locale={locale} />
+            <AdminBlogCard key={p.id} blog={p} locale={locale} />
           ))}
         </div>
       )}

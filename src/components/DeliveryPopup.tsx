@@ -25,7 +25,7 @@ export function DeliveryPopup({ d }: { d: Delivery }) {
           <Row label={t("quantity")} value={d.quantity.toLocaleString()} />
           <Row label={t("date")} value={formatDate(d.deliveryDate)} />
           <Row label={t("purpose")} value={d.purpose} />
-          <Row label={t("customer")} value={d.city} />
+          <Row label={t("customer")} value={d.customerName} />
         </dl>
       </div>
     );
@@ -40,7 +40,7 @@ export function DeliveryPopup({ d }: { d: Delivery }) {
         <Row label={t("quantity")} value={d.quantity.toLocaleString()} />
         <Row label={t("date")} value={formatDate(d.deliveryDate)} />
         <Row label={t("purpose")} value={d.purpose} />
-        <Row label={t("customer")} value={d.city} />
+        <Row label={t("customer")} value={d.customerName} />
       </dl>
     </div>
   );
