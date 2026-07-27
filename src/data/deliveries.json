@@ -1,19 +1,6 @@
 {
   "deliveries": [
     {
-      "id": "d-1785177187032",
-      "customerName": "",
-      "projectType": "",
-      "products": [],
-      "quantity": 0,
-      "deliveryDate": "",
-      "purpose": "",
-      "isGovernment": false,
-      "lat": 0,
-      "lng": 0,
-      "city": ""
-    },
-    {
       "id": "d-1784534769178",
       "customerName": "Mohan",
       "projectType": "Infrastructure",
