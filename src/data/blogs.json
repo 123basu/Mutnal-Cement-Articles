@@ -1,6 +1,17 @@
 {
   "blogs": [
     {
+      "category": "lala",
+      "title": "lala",
+      "description": "lala",
+      "author": "lala",
+      "date": "2026-07-23",
+      "readingTime": 0,
+      "content": "lalalal",
+      "id": "b-1785177937829",
+      "slug": "lala"
+    },
+    {
       "category": "Sustainability · Products",
       "title": "Why Fly-Ash Cement Bricks Are Better for the Environment",
       "description": "",
